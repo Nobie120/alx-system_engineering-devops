@@ -2,6 +2,7 @@
 echo "this is so cool damn"
 git add .
 echo -n "Enter commit message"
+echo 
 echo ==========================================================================
 read message 
 git commit -m '$message'
