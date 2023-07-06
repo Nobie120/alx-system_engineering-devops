@@ -1,7 +1,7 @@
 #!/bin/bash
-clear
+echo "this is so cool damn"
 git add .
-echo -n "Enter message commit message"
+echo -n "Enter commit message"
 echo ==========================================================================
 read message 
 git commit -m '$message'
