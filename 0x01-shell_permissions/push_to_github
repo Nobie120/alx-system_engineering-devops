@@ -5,4 +5,5 @@ echo -n "Enter commit message"
 echo ==========================================================================
 read message 
 git commit -m '$message'
+echo "commiting done now its time for pushing"
 git push
