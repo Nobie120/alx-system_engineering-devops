@@ -1,10 +1,8 @@
 #!/bin/bash
 clear
-echo ===========================================================================
 git add .
 echo -n "Enter message"
 echo ==========================================================================
 read message 
 git commit -m '$message'
-
 git push
