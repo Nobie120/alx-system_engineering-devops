@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 #displays lines containing the bash word
 
-ps aux --forest | grep bash | grep -V
+ps aux --forest | grep bash | head -n 3
