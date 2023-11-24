@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+#using the SIGKILL signal that cannot be trapped
+
+pkill -f -SIGKILL 7-highlander
