@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-#Using trap to catch the SIGTERM signal
+#Using trap to catch all the SIGTERM signal
 
 while true
 do
