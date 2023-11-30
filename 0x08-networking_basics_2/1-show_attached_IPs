@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 #displays all active IPv4 IPs on the machine it’s executed on
 
-ipconfig | grep -Eo "inet (addr:)?([0-9]*\.){3}[0-9]*" | cut -b 11-
+ipconfig | grep -Eo "inet (addr:)?([0-9]*\.){3}[0-9]*" | sed 's/addr://' | cut -b 6-
