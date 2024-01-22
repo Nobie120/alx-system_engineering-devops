@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# sets up a new 404 error page
+sudo apt-get update
+sudo apt-get install -y nginx 
+echo "Hello World!" > index.html
+sudo mv index.html /var/www/html
+
+echo "Ceci n'est pas une page" > 404.html
+sudo mv 404.html /var/www/html
+
+nginx_conf="/etc/nginx/sites-available/default"  # Update the path if needed
+sed_pattern='\\t'"error_page 404 /404.html;\\n\\tlocation = /404.html{\\t\\tinternal;
+\\t}"
+
+sed -i "/server_name _;/a $sed_pattern" $nginx_conf
+
+sudo service nginx restart
