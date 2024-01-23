@@ -9,8 +9,7 @@ echo "Ceci n'est pas une page" > 404.html
 sudo mv 404.html /var/www/html
 
 nginx_conf="/etc/nginx/sites-available/default"  # Update the path if needed
-sed_pattern='\\t'"error_page 404 /404.html;\\n\\tlocation = /404.html{\\t\\tinternal;
-\\t}"
+sed_pattern='\\n\t'"error_page 404 /404.html;\\n \\tlocation = /404.html{\\n\\t\\tinternal;\\n\\t}\\n\\n"
 
 sed -i "/server_name _;/a $sed_pattern" $nginx_conf
 
