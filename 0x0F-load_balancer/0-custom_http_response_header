@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# sets up a new 404 error page
+# Duplicating web-01 to web-02
 sudo apt-get update
 sudo apt-get install -y nginx
 echo "Hello World!" > index.html
