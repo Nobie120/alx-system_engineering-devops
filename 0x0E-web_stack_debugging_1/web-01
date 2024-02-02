@@ -1,0 +1,1 @@
+ssh -i ~/.ssh/id_rsa_alx ubuntu@54.82.110.66
