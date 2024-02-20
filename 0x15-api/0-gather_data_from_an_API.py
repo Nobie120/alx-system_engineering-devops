@@ -12,6 +12,6 @@ if __name__ == "__main__":
     done = [t.get('title') for t in todos if t.get('completed') is True]
 
     print(f"Employee {user.get('name')}\
-is done with tasks({len(done)}/{len(todos)}):")
+ is done with tasks({len(done)}/{len(todos)}):")
 
     [print(f"\t {c}") for c in done]
