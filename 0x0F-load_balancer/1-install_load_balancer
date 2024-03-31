@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+# Installs and setup haproxy
+
+apt-get install -y software-properties-common
+add-apt-repository -y ppa:vbernat/haproxy-1.8
+apt-get -y update
+apt-get install -y haproxy
+
+echo "ENABLED=1" > /etc/default/haproxy
+
+# Listen to web1 and web2 servers                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+echo "
+frontend kenaule.tech
+   bind 0:80
+   default_backend kenaule.tech_backend
+
+backend kenaule.tech_backend
+   balance roundrobin
+   server hostname hostIP:PORT check
+   server 470470-web-01 52.91.147.235:80 check
+   server 470470-web-02 52.91.117.111:80 check
+" >> /etc/haproxy/haproxy.cfg
+
+service haproxy start
