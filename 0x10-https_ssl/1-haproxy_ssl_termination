@@ -33,19 +33,19 @@ defaults
         errorfile 503 /etc/haproxy/errors/503.http
         errorfile 504 /etc/haproxy/errors/504.http
 
-frontend kenaule-frontend
+frontend ngnix-frontend
         bind *:80
         mode http
         http-request redirect scheme https code 301 unless { ssl_fc }
         http-request set-header X_Forwarded-Proto http
-        default_backend kenaule-backend
+        default_backend ngnix_webservers
 
-frontend kenaule-frontend-https
+frontend ngnix-frontend-https
         bind *:443 ssl crt /etc/haproxy/certs/www.kenaule.tech.pem
         http-request set-header X-Forwarded-Proto https
-        default_backend kenaule-backend
+        default_backend ngnix_webservers
 
-backend kenaule-backend
+backend ngnix_webservers
         balance roundrobin
-        server 470470-web-01 18.206.202.207:80 check
-        server 470470-web-02 100.25.17.52:80 check
+        server 470470-web-01    52.91.147.235:80 check
+        server 470470-web-02    52.91.117.111:80 check

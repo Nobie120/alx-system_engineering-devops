@@ -1,3 +1,0 @@
-#!/usr/bin/bash
-
-ssh -i ~/.ssh/id_rsa ubuntu@35.174.211.31
